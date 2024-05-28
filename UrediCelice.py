@@ -16,7 +16,7 @@ class Style:
                 left=thick, right=thick, top=thick, bottom=thick)
             self.alignment = styles.Alignment(
                 horizontal='center', vertical='center')
-        # za vse ostalo
+        # za vpodnaslov
         elif tip.lower() == "podnaslov":
             self.font = styles.Font(name='Arial', size=12, color='000000')
             self.fill = styles.PatternFill()
@@ -24,8 +24,9 @@ class Style:
             self.border = styles.Border(left=thin, right=thin, bottom=thin)
             self.alignment = styles.Alignment(
                 horizontal="center", vertical="center")
+        # za vse ostalo
         else:
-            self.font = styles.Font(name='Arial', size=12, color='000000')
+            self.font = styles.Font(name='Calibri', size=12, color='000000')
             self.fill = None
             self.border = None
             self.alignment = styles.Alignment(

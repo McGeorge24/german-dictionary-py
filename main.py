@@ -1,7 +1,7 @@
 import openpyxl as excel
 from UstvariLetnik import *
 
-trenuten_letnik = 1
+trenuten_letnik = 0
 
 
 def main() -> None:

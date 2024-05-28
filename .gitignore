@@ -1,5 +1,8 @@
 # vse povezano z excelom
 *.xlsx
+# VS Code
+tempCodeRunnerFile.py
+
 
 # VSE OSTALO POVEZANO S PYTHONOM
 # Byte-compiled / optimized / DLL files
