@@ -1,3 +1,7 @@
+# vse povezano z excelom
+*.xlsx
+
+# VSE OSTALO POVEZANO S PYTHONOM
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

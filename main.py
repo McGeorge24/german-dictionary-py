@@ -1,5 +1,13 @@
 from openpyxl import load_workbook
 
+def Naslov() -> None:
+    print()
+
+def NovLetnik() -> None:
+    print()
+
+def NovLetnik() -> None:
+    print()
 
 def main() -> None:
     # Naloži zvezek in list
