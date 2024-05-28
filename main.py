@@ -1,25 +1,21 @@
-from openpyxl import load_workbook
+import openpyxl as excel
+from UstvariLetnik import *
 
-def Naslov() -> None:
-    print()
+trenuten_letnik = 1
 
-def NovLetnik() -> None:
-    print()
-
-def NovLetnik() -> None:
-    print()
 
 def main() -> None:
     # Naloži zvezek in list
-    workbook = load_workbook('assets\\test_spreadsheet.xlsx')
-    letnik = workbook["LETNIK1"]
+    workbook = excel.load_workbook('assets\\test.xlsx')
+    letnik = workbook["Sheet1"]
 
     # Manipuliranje s celicami
     letnik["A1"] = "Hello excel"
-    print("hello world")
+
+    NovLetnik(workbook, trenuten_letnik)
 
     # Shrani zvezek
-    workbook.save('assets\\test_spreadsheet.xlsx')
+    workbook.save('assets\\test.xlsx')
 
 
 if __name__ == "__main__":
