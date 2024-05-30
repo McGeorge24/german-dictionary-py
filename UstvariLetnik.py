@@ -4,7 +4,6 @@ from UrediCelice import *
 
 
 def NaslovPridevnik(tabela, cursor_pos: tuple, naslov: Style, podnaslov: Style) -> None:
-
     tabela["B3"] = "PRIDEVNIKI"
     tabela.merge_cells('B3:C3')
     ApplyStyleToCells(tabela, 3, 2, 3, 3, naslov)
@@ -19,17 +18,27 @@ def NaslovGlagol(tabela, cursor_pos: tuple, naslov: Style, podnaslov: Style) -> 
     ApplyStyleToCells(tabela, 3, 5, 3, 8, naslov)
     tabela["E4"] = "glagol"
     tabela["F4"] = "3. oseba"
-    tabela["G4"] = "preteklik?"
+    tabela["G4"] = "perfekt?"
     tabela["H4"] = "pomen"
     ApplyStyleToCells(tabela, 4, 5, 4, 8, podnaslov)
 
 
-def NaslovPrislov() -> None:
-    print()
+def NaslovPrislov(tabela, cursor_pos: tuple, naslov: Style, podnaslov: Style) -> None:
+    tabela["J3"] = "PRISLOVI"
+    tabela.merge_cells('J3:K3')
+    ApplyStyleToCells(tabela, 3, 10, 3, 11, naslov)
+    tabela["J4"] = "prislov"
+    tabela["K4"] = "pomen"
+    ApplyStyleToCells(tabela, 4, 10, 4, 11, podnaslov)
 
 
-def NaslovDrugo() -> None:
-    print()
+def NaslovDrugo(tabela, cursor_pos: tuple, naslov: Style, podnaslov: Style) -> None:
+    tabela["M3"] = "DRUGE OBLIKE"
+    tabela.merge_cells('M3:N3')
+    ApplyStyleToCells(tabela, 3, 13, 3, 14, naslov)
+    tabela["M4"] = "besedna zveza"
+    tabela["N4"] = "pomen"
+    ApplyStyleToCells(tabela, 4, 13, 4, 14, podnaslov)
 
 
 def NovLetnik(workbook, trenuten_letnik: int) -> None:
@@ -44,5 +53,5 @@ def NovLetnik(workbook, trenuten_letnik: int) -> None:
 
     NaslovPridevnik(nov_letnik, cursor_pos, slog_naslov, slog_podnaslov)
     NaslovGlagol(nov_letnik, cursor_pos, slog_naslov, slog_podnaslov)
-    NaslovPrislov()
-    NaslovDrugo()
+    NaslovPrislov(nov_letnik, cursor_pos, slog_naslov, slog_podnaslov)
+    NaslovDrugo(nov_letnik, cursor_pos, slog_naslov, slog_podnaslov)
