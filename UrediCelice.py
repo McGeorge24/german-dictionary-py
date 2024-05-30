@@ -33,6 +33,27 @@ class Style:
                 horizontal='left', vertical='center')
 
 
+class CellCoord:
+    def __init__(self, row: int, column: int) -> None:
+        self.row = row
+        self.col = column
+
+    def format(self) -> str:
+        return f"{excel.utils.get_column_letter(self.col)}{self.row}"
+
+    def tuple(self) -> tuple[int, int]:
+        return (self.row, self.col)
+
+
+# list[row: int, column: int]
+def CellRange(start_cell: CellCoord, end_cell: CellCoord) -> str:
+    start_cell = excel.utils.get_column_letter(
+        start_cell.col) + str(start_cell.row)
+    end_cell = excel.utils.get_column_letter(end_cell.col) + str(end_cell.row)
+    cell_range = f"{start_cell}:{end_cell}"
+    return cell_range
+
+
 def ApplyStyleToCells(sheet, start_row, start_col, end_row, end_col, style: Style) -> None:
     for row in range(start_row, end_row + 1):
         for col in range(start_col, end_col + 1):
