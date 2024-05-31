@@ -38,6 +38,12 @@ class CellCoord:
         self.row = row
         self.col = column
 
+    def __eq__(self, other) -> bool:
+        return self.col == other.col and self.row == other.row
+
+    def __ne__(self, other) -> bool:
+        return self.col != other.col or self.row != other.row
+
     def format(self) -> str:
         return f"{excel.utils.get_column_letter(self.col)}{self.row}"
 
@@ -62,9 +68,12 @@ def NajdiCelicoStolpec(tabela, zacetna_celica: CellCoord, vrednost=None) -> Cell
 
 
 # najde prvo (prosto) celico v stolpcu
-def NajdiCelicoVrsta(tabela, zacetna_celica: CellCoord, vrednost=None) -> CellCoord:
-    while tabela[zacetna_celica.format()].value != vrednost:
+def NajdiCelicoVrsta(tabela, zacetna_celica: CellCoord, vrednost=None, absolutna_meja=1000) -> CellCoord:
+    while tabela[zacetna_celica.format()].value != vrednost and zacetna_celica.col < absolutna_meja:
+        print(f"{zacetna_celica.row}, {zacetna_celica.col}")
         zacetna_celica.col += 1
+    if zacetna_celica.col == absolutna_meja:
+        return CellCoord(1, 1)
     return zacetna_celica
 
 

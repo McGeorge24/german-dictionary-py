@@ -49,3 +49,7 @@ class Program:
                 self.cursor = NajdiCelicoVrsta(
                     self.tabela, self.cursor, vrednost="DRUGE OBLIKE")
                 NovaBesednaZveza(self.tabela, self.cursor)
+            elif temp_input == "new tema":
+                DodajTemo(self.tabela, self.cursor)
+            elif temp_input == "new samostalnik":
+                NovSamostalnik(self.tabela, self.cursor)
