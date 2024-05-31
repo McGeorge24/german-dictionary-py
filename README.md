@@ -4,6 +4,7 @@ Tu je program za urejanje excel tabele  z besedami za nemščino.
 Za uporabo je potreben python z modulom "openpyxl"
 
 Navodila za uporabo:
+
     1. naložite si python 3: *https://www.python.org/downloads/*
     2. nastavite PATH
     3. naložite openpyxl modul z ukazom: *pip install openpyxl*
