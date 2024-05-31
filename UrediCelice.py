@@ -54,6 +54,20 @@ def CellRange(start_cell: CellCoord, end_cell: CellCoord) -> str:
     return cell_range
 
 
+# najde prvo (prosto) celico v stolpcu
+def NajdiCelicoStolpec(tabela, zacetna_celica: CellCoord, vrednost=None) -> CellCoord:
+    while tabela[zacetna_celica.format()].value != vrednost:
+        zacetna_celica.row += 1
+    return zacetna_celica
+
+
+# najde prvo (prosto) celico v stolpcu
+def NajdiCelicoVrsta(tabela, zacetna_celica: CellCoord, vrednost=None) -> CellCoord:
+    while tabela[zacetna_celica.format()].value != vrednost:
+        zacetna_celica.col += 1
+    return zacetna_celica
+
+
 def ApplyStyleToCells(sheet, start_row, start_col, end_row, end_col, style: Style) -> None:
     for row in range(start_row, end_row + 1):
         for col in range(start_col, end_col + 1):
