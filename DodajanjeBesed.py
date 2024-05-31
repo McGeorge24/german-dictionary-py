@@ -83,8 +83,8 @@ def PridobiTeme(tabela, zacetna_celica: CellCoord) -> list:
     while cursor != CellCoord(1, 2):
         cursor = NajdiCelicoVrsta(
             tabela, cursor, vrednost="samostalniki", absolutna_meja=meja)
+        meja = cursor.col + 100
         cursor.col += 1
-        print(f"{cursor.row}, {cursor.col}")
         seznam_tem.append(tabela[cursor.format()].value)
     seznam_tem.pop()
     return (seznam_tem)
@@ -139,7 +139,7 @@ def NovSamostalnik(tabela, cursor: CellCoord) -> None:
     cursor = NajdiCelicoStolpec(tabela, cursor)
     clen = str(input("Vnesi clen samostalnika:\t")).lower()
     samostalnik = str(input("Vnesi samostalnik:\t")).capitalize()
-    mnozina = "-".join(str(input("Vnesi mnozinsko koncnico\t-")))
+    mnozina = str(input("Vnesi mnozinsko koncnico\t-"))
     pomen = str(input("Vnesi pomen/prevod:\t")).lower()
     tabela[cursor.format()] = clen
     cursor.col += 1
