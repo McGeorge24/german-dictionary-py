@@ -1,9 +1,6 @@
 from interface import Program
 
 
-trenuten_letnik = 1
-
-
 def main() -> None:
     program = Program()
     program.run()
