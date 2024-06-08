@@ -1,5 +1,6 @@
 # german-dictionary-py
 Tu je program za urejanje excel tabele  z besedami za nemščino.
+# GRAFIČNI UPORABNIŠKI VMESNIK PRIHAJA ZELO KMALU
 
 Za uporabo je potreben python z modulom "openpyxl"
 
